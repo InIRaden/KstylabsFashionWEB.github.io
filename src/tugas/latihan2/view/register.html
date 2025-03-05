@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box register">
+            <h2>Daftar</h2>
+            <form action="login.html" method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="text" name="alamat" placeholder="Alamat" required>
+                <select name="gender" required>
+                    <option value="">Pilih Jenis Kelamin</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+                <select name="jurusan" required>
+                    <option value="">Pilih Jurusan</option>
+                    <option value="RPL">RPL</option>
+                    <option value="PGPAUD">PGPAUD</option>
+                    <option value="PGSD">PGSD</option>
+                    <option value="Tekkom">Tekkom</option>
+                    <option value="Multimedia">Multimedia</option>
+                </select>
+                <label>Tanggal Lahir:</label>
+                <input type="date" name="tanggal_lahir" required>
+                <button type="submit">Daftar</button>
+                <p>Sudah punya akun? <a href="login.html">Login</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
