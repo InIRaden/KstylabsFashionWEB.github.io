@@ -152,3 +152,10 @@ nav {
     grid-template-columns: 1fr;
   }
 }
+
+/* Link */
+
+a {
+  color: #333;
+  text-decoration: none;
+}
