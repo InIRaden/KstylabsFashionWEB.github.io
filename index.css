@@ -70,8 +70,9 @@ header {
 .search-container {
   display: flex;
   align-items: center;
-  max-width: 400px;
+  max-width: 500px; /* Increased from 400px */
   width: 100%;
+  margin: 0 20px; /* Added margin on sides */
 }
 
 .search-input {
@@ -80,6 +81,7 @@ header {
   border: 1px solid #eee;
   border-radius: 30px 0 0 30px;
   font-size: 14px;
+  min-width: 300px; /* Added minimum width */
 }
 
 .search-input:focus {
