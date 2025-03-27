@@ -1,101 +1,121 @@
-/* ========== RESET STYLING ========== */
-/* Menghapus margin dan padding default pada semua elemen */
 * {
-    margin: 0; /* Mengontrol jarak antara elemen yang terpisah pada halaman */
-    padding: 0; /* Mengontrol jarak antara konten elemen dan batas elemen */
-    box-sizing: border-box; /* Mengontrol elemen agar tidak melebar */
-    font-family: Arial, sans-serif; /* Mengatur font default */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-bottom: #fff;
 }
 
 body {
-    background-color: #f5f5f5; /* Warna background */
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    position: relative;
 }
 
-/*  NAVBAR STYLING  */
+
+
+
 header {
-    background-color: white; /* Warna background */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
-    position: fixed;    /* Navbar tetap di atas */
-    width: 100%;   /* Lebar 100% */
-    top: 0;   /* Navbar di atas */
-    left: 0;  /* Navbar di kiri */
-    z-index: 1000; /* Navbar di atas konten */
-    padding-bottom: 10px; /* Tambahkan padding bawah */
-}
-
-/* Top Navbar */
-.top-nav {
-    display: flex; /* Menjadikan flexbox */
-    align-items: center; /* Mengatur posisi vertikal */
-    justify-content: space-between; /* Mengatur jarak antar elemen */
-    padding: 15px 40px; /* Memberikan ruang di dalam navbar */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem 2rem ;
+    border-bottom: 1px solid white;
+    background-color: white; 
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 2.25rem;
     font-weight: bold;
+    font-style: italic;
 }
 
 .logo span {
-    font-weight: normal;
-    color: #555;
+    font-style: normal;
+    font-size: 2.25rem;
 }
 
-/* Search Bar */
-.search-bar {
-    display: flex; /* Mengatur elemen dalam search bar agar bersebelahan */
-    align-items: center; /* Menjadikan elemen sejajar secara vertikal */
-    border: 1px solid #ddd; /* Memberikan border tipis */
-    border-radius: 25px; /* Membuat sudut membulat */
-    padding: 5px 15px; /* Menambahkan padding agar lebih nyaman */
-    background-color: #f9f9f9; /* Warna latar belakang abu-abu terang */
-    width: 50%; /* Menyesuaikan lebar search bar */
+.top_bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+    font-size: 12px;
+
+    
+}
+
+.top_bar a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    transition: color 0.5s ease-in-out;
+    
+}
+
+.top_bar a:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.1);
+    
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.1rem;
 }
 
 .search-bar input {
-    border: none; /* Menghilangkan border */
-    outline: none; /* Menghilangkan garis biru saat di klik */
-    padding: 10px;
-    width: 100%; /* Biar mengikuti ukuran parent */
-    font-size: 16px;
-    background: transparent; /* Warna latar belakang transparan */
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.192);
+    border-radius: 9999px;
+    width: 500px;
+    height: 34px;
+    outline: none;
+    margin-right: 5rem;
+    transition: border-color 0.5s ease-in-out;
 }
 
-.search-icon {
-    font-size: 18px;
-    cursor: pointer;
-    color: #777;
+.search-bar input:focus {
+    border-color: #a9585808;
+    box-shadow: 0 0 0 2px rgba(1, 7, 18, 0.3);
 }
 
-
-/* Icons */
 .icons {
     display: flex;
-    gap: 15px; /* Memberikan jarak antar ikon */
-    font-size: 20px; /* Mengatur ukuran ikon */
-    cursor: pointer; /* Membuat ikon dapat diklik */
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1rem;
 }
 
-
-/* Bottom Navbar */
-.bottom-nav {
-    display: flex; /* Menjadikan flexbox */
-    justify-content: center; /* Pusatkan link navbar */
-    gap: 25px; /* Tambahkan jarak antar link */
-    padding: 10px 0; /* Tambahkan padding atas dan bawah */
-    border-top: none; /* Tidak perlu border atas */
+.icons i {
+    font-size: 1.2rem;
+    color: gray;
+    cursor: pointer;
 }
 
-.bottom-nav a {
-    text-decoration: none; /* Menghilangkan garis bawah */
-    color: black;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s;
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 0;
+    font-size: 1rem;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
 }
 
-.bottom-nav a:hover {
-    color: #555;
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav a:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.1);
 }
 
 /* ========== MAIN CONTENT ========== */

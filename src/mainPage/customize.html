@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>K-StyLabs</title>
-    <link rel="stylesheet" href="../public/css/customize.css" />
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K-StyLabs</title>
+  <link rel="stylesheet" href="../public/css/customize.css" />
+</head>
+
+<body>
+  <div class="container">
     <header>
-      <div class="top-nav">
-        <div class="logo">k- <span>StyLabs</span></div>
-        <!-- Logo K-StyLabs -->
-
-        <!-- Search Bar -->
-
+      <div class="logo">
+        K-<span>StyLabs</span>
+      </div>
+      <div class="search-container">
         <div class="search-bar">
-          <input type="text" placeholder="Search your own style" />
-          <span class="search-icon">🔍</span>
-          <!-- Icon dalam search bar -->
+          <input type="text" placeholder="Search your own style">
         </div>
-
-        <!-- User Icon -->
-
+        <div class="top_bar">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+        </div>
         <div class="icons">
-          <span>👤</span>
-          <span>❤️</span>
+          <i class="fas fa-user" onclick="window.location.href='#home'"></i>
+          <i class="fas fa-heart"></i>
         </div>
       </div>
-
-      <!-- NAVBAR -->
-
-      <nav class="bottom-nav">
-        <a href="#">Korean Clothes</a>
-        <a href="#">Accessories</a>
-        <a href="#">Fashion Tips</a>
-        <a href="#">Customize</a>
-      </nav>
     </header>
+
+    <nav>
+      <a href="#">Korean Clothes</a>
+      <a href="#">Accessories</a>
+      <a href="../blog/blog.html">Fashion Tips</a>
+      <a href="#">Customize</a>
+    </nav>
 
     <!-- KOREAN CLOTHES -->
 
@@ -180,7 +178,8 @@
       <hr />
       <p class="copyright">© 2019 Lift Media | All Rights Reserved</p>
     </footer>
+  </div>
+  <script src="../public/js/customize.js"></script>
+</body>
 
-    <script src="../public/js/customize.js"></script>
-  </body>
 </html>
