@@ -15,9 +15,6 @@ body {
     position: relative;
 }
 
-
-
-
 header {
     display: flex;
     align-items: center;
@@ -44,8 +41,6 @@ header {
     gap: 1rem;
     margin-left: auto;
     font-size: 12px;
-
-    
 }
 
 .top_bar a {
@@ -71,31 +66,33 @@ header {
 
 .search-bar input {
     padding: 0.5rem 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.192);
+    border: 1px solid rgb(125, 125, 125);
     border-radius: 9999px;
     width: 500px;
+    background-color: #f3f4f698;
     height: 34px;
     outline: none;
-    margin-right: 5rem;
+    margin-right: 10rem;
     transition: border-color 0.5s ease-in-out;
 }
 
-.search-bar input:focus {
-    border-color: #a9585808;
-    box-shadow: 0 0 0 2px rgba(1, 7, 18, 0.3);
-}
 
+.search-bar input:focus {
+    border-color: black;
+    border-width: 1.2px;
+    
+}
 .icons {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-left: 1rem;
+    margin-right: 2rem;
 }
 
 .icons i {
     font-size: 1.2rem;
-    color: gray;
-    cursor: pointer;
+        color: black;
+        cursor: pointer;
 }
 
 nav {
@@ -121,7 +118,11 @@ nav a:hover {
 /* ========== MAIN CONTENT ========== */
 main {
     display: flex;
-    padding: 140px 20px 20px; /* Memberikan ruang agar tidak tertutup navbar */
+<<<<<<< HEAD
+    padding: 80px 20px 20px; /* Memberikan ruang agar tidak tertutup navbar */
+=======
+    padding: 50px 20px 20px; /* Memberikan ruang agar tidak tertutup navbar */
+>>>>>>> 3afe7c0e12b20c30717fd54c4221489e9161f347
 }
 
 aside {
@@ -170,105 +171,96 @@ h3 {
 
 
 /* Untuk bagian RECOMENDED */
-.recomended {
+/* carousel  */
+.recommended {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin: 20px 0;
-    padding-bottom: 20px;
-}
-
-.recomended h2 {
-    text-align: center;
-    margin-bottom: 30px; /* Tambah jarak lebih jauh */
-}
-
-/* Container utama agar carousel tetap di tengah */
-.carousel-container {
-    position: relative;
-    width: 90%; /* Sesuaikan dengan layar */
-    max-width: 850px;
-    margin: auto;
-    padding-top: 50px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-}
-
-/* Wrapper untuk item */
-.carousel {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 15px; /* Sesuaikan jarak antar item */
-    transition: transform 0.5s ease-in-out;
     width: 100%;
+    margin-top: 1rem;
+    overflow-x: auto;
+    padding: 10px;
+    overflow-x: hidden;
 }
-
-/* Style untuk setiap kartu */
-.item {
-    background: white;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 250px;  /* Lebar yang pas sesuai contoh */
-    flex: 0 0 auto;
-    padding-bottom: 10px;
-    position: relative; /* Untuk posisi icon */
+.recommended button {
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    background-color: #fffdfd;
+    cursor: pointer;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease-in-out;
 }
+.recommended button:hover {
+    background-color: #d0d0d0;
+}
+.cards-recommended {
+    display: flex;
+    overflow-x: hidden;
+    gap: 30px;
+    padding: 5px;
+    scroll-behavior: smooth;
+}
+.card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    flex-shrink: 0;
+    overflow: wrap;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+    height: 380px;
 
-/* Style untuk gambar dalam item */
-.item img {
+}
+.card img {
     width: 100%;
-    height: 250px; /* Pastikan gambar sejajar */
-    border-radius: 10px;
-    object-fit: cover; /* Pastikan gambar tidak melebar */
-    box-shadow: #555 0 0 5px;
+    height: 250px;
+    object-fit: cover;
+    border-radius:15px ;
 }
+.card-content {
+    position: relative;
+    padding: 10px;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
 
-/* Style teks produk */
-.item p {
-    font-size: 16px;
-    margin-top: 10px;
-    font-weight: 700;
-    text-align: left;
+
 }
+.card h2 {
+    position: relative;
+    font-size: 1rem;
+    margin-right: 5px;
+    font-weight: bold;
+    right: 10px;
+    text-align: start;
+    max-width: 190px;
+    word-wrap: break-word;
 
-/* Style tombol favorit */
+}
+.card p {
+    color: gray;
+    margin: 5px 0 0 -8px;
+}
 .favorite {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 18px;
+    font-size: 22px;
+    color: gray;
     cursor: pointer;
-    color: black;
+    float: right;
+    margin-right: 10px;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+    top: -50px;
+    right: -180px;
+    z-index: 1;
 }
-
 .favorite:hover {
-    color: red;
-}
-
-/* Tombol navigasi kiri dan kanan */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    background: white;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-}
-
-.prev {
-    left: -40px; /* Geser ke luar */
-}
-
-.next {
-    right: -40px; /* Geser ke luar */
+    color: black;
 }
 
 /* Untuk Info */
@@ -306,117 +298,92 @@ h3 {
     margin-top: 10px;
 }
 
-
-
-/* Untuk arrival */
-.new-arrival {
+/* carousel  */
+.carousel {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin: 20px 0;
-    padding-bottom: 20px;
-}
-
-.new-arrival h2 {
-    text-align: center;
-    margin-bottom: 30px; /* Tambah jarak lebih jauh */
-}
-
-/* Container utama agar carousel tetap di tengah */
-.arrival-container {
-    position: relative;
-    width: 90%; /* Sesuaikan dengan layar */
-    max-width: 850px;
-    margin: auto;
-    padding-top: 50px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-}
-
-/* Wrapper untuk item */
-.arrival-carousel {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 15px; /* Sesuaikan jarak antar item */
-    transition: transform 0.5s ease-in-out;
     width: 100%;
+    margin-top: 1rem;
+    overflow-x: hidden;
+    padding: 10px;
+    overflow-x: auto;
+ 
 }
-
-/* Style untuk setiap kartu */
-.item-arrival {
-    background: white;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 250px;  /* Lebar yang pas sesuai contoh */
-    flex: 0 0 auto;
-    padding-bottom: 10px;
-    position: relative; /* Untuk posisi icon */
+.carousel button {
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    background-color: #fffdfd;
+    cursor: pointer;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease-in-out;
 }
-
-/* Style untuk gambar dalam item */
-.item-arrival img {
-    width: 100%;
-    height: 250px; /* Pastikan gambar sejajar */
-    border-radius: 10px;
-    object-fit: cover; /* Pastikan gambar tidak melebar */
-    box-shadow: #555 0 0 5px;
+.carousel button:hover {
+    background-color: #d0d0d0;
 }
-
-/* Style teks produk */
-.item-arrival p {
-    font-size: 16px;
-    margin-top: 10px;
-    font-weight: 700;
-    text-align: left;
+.cards-container {
+    display: flex;
+    overflow-x: hidden;
+    gap: 30px;
     padding: 5px;
+    scroll-behavior: smooth;
 }
-
-.item-arrival span {
-    font-size: 14px;
+.card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    flex-shrink: 0;
+    overflow: wrap;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+    height: 380px;
+}
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius:15px ;
+}
+.card-content {
+    position: relative;
+    padding: 10px;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+}
+.card h2 {
+    position: relative;
+    font-size: 1rem;
+    margin-right: 5px;
+    font-weight: bold;
+    right: 10px;
+    text-align: start;
+    max-width: 190px;
+    word-wrap: break-word;
+}
+.card p {
     color: gray;
-    text-align: left;
-    display: block; /* Agar text-align berfungsi */
-    padding: 5px ;
+    margin: 5px 0 0 -8px;
 }
-
-/* Style tombol favorit */
 .favorite {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 18px;
+    font-size: 22px;
+    color: gray;
     cursor: pointer;
-    color: black;
+    float: right;
+    margin-right: 10px;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+    top: -30px;
+    right: -180px;
 }
-
 .favorite:hover {
-    color: red;
-}
-
-/* Tombol navigasi kiri dan kanan */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    background: white;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-}
-
-.prev {
-    left: -40px; /* Geser ke luar */
-}
-
-.next {
-    right: -40px; /* Geser ke luar */
+    color: black;
 }
 
 /* Untuk Footer */

@@ -339,6 +339,9 @@ nav {
   margin-left: 3rem;
 }
 
+.footer-container p {
+  color: #ffffff60;
+}
 .footer-left,
 .footer-middle,
 .footer-right {
