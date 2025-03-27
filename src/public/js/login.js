@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
       
-      // Here you would typically send the login data to your server
+      // send the login data to server (biasanya, tapi karena gk pake server ya gitu deh)
       console.log('Login attempt:', { email, password });
       
-      // For demo purposes, simulate a successful login
+      // karena ini demo doang, simulasikan login yang sukses
       alert('Login successful!');
       // Redirect after login
       redirectToPreviousPage();
