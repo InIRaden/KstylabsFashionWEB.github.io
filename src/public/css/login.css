@@ -120,11 +120,12 @@ h1 {
 
 .subtitle {
   color: #555;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .form-group {
   margin-bottom: 20px;
+  
 }
 
 label {
@@ -136,8 +137,8 @@ label {
 input {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border: 1px solid #dddddd67;
+  border-radius: 20px;
   font-size: 14px;
   transition: border-color 0.3s;
 }
@@ -153,7 +154,7 @@ input:focus {
   background-color: #000;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
