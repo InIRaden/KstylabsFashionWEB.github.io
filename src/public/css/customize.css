@@ -116,58 +116,129 @@ nav a:hover {
 }
 
 /* ========== MAIN CONTENT ========== */
+/* Update main content styles */
 main {
     display: flex;
-<<<<<<< HEAD
-    padding: 80px 20px 20px; /* Memberikan ruang agar tidak tertutup navbar */
-=======
-    padding: 50px 20px 20px; /* Memberikan ruang agar tidak tertutup navbar */
->>>>>>> 3afe7c0e12b20c30717fd54c4221489e9161f347
+    padding: 20px;
+    gap: 20px;
+    height: calc(100vh - 150px);
 }
 
+/* Sidebar styles */
 aside {
-    width: 25%; /* Sidebar mengambil 25% dari lebar layar */
-    background-color: white; /* Latar belakang putih agar menonjol */
-    padding: 15px; /* Tambahkan ruang di dalam sidebar */
-    border-radius: 10px; /* Membuat sudut membulat */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Menambahkan efek bayangan */
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-h3 {
-    text-align: center;
-    margin-bottom: 10px;
+.categories {
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #eee;
+}
+
+.category-btn {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.category-btn.active {
+    background: #000;
+    color: white;
+    border-color: #000;
 }
 
 .image-list {
-    display: flex;
-    flex-direction: column; /* Menjadikan flexbox dengan arah vertikal */
-    gap: 10px; /* Jarak antar gambar */
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    overflow-y: auto;
+    height: 100%;
 }
 
 .image-list img {
     width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
     border-radius: 8px;
-    cursor: pointer; /* Mengubah kursor saat dihover */
-    transition: transform 0.2s; /* Efek perubahan saat dihover */
+    cursor: move;
+    transition: transform 0.2s;
 }
 
 .image-list img:hover {
-    transform: scale(1.05); /* Perbesar gambar saat dihover */
+    transform: scale(1.05);
 }
 
+/* Drop zone styles */
 .preview {
-    flex-grow: 1; /* Bagian preview akan memenuhi ruang yang tersedia */
-    background-color: white; /* Latar belakang putih */
-    margin-left: 20px; /* Jarak dari sidebar */
-    padding: 20px; /* Padding agar terlihat rapi */
-    border-radius: 10px; /* Sudut membulat */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan agar terlihat mengambang */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    color: gray; /* Warna teks abu-abu */
+    flex: 1;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    overflow-y: auto;
 }
+
+.drop-zones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    height: 100%;
+}
+
+.drop-zone {
+    border: 2px dashed #ddd;
+    border-radius: 10px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.drop-zone.drag-over {
+    border-color: #000;
+    background: rgba(0,0,0,0.05);
+}
+
+.drop-zone img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.drop-zone:hover .remove-btn {
+    opacity: 1;
+}
+
+/* Update carousel styles */
 
 
 /* Untuk bagian RECOMENDED */
@@ -326,11 +397,61 @@ h3 {
     background-color: #d0d0d0;
 }
 .cards-container {
+    position: relative;
+    width: 100%;
+    padding: 0 40px;
+    margin: 20px 0;
+}
+
+.cards-container {
     display: flex;
-    overflow-x: hidden;
-    gap: 30px;
-    padding: 5px;
+    gap: 16px;
+    overflow-x: auto;
     scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.cards-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 280px; /* Adjust based on your design */
+}
+
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
+
+#prev:hover, #next:hover {
+    background: #f5f5f5;
+}
+
+#prev.disabled, #next.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 .card {
     background-color: white;
@@ -427,6 +548,10 @@ h3 {
     line-height: 1.5;
 }
 
+
+.footer p { 
+    color: #ffffff84;
+}
 .footer-left ul {
     list-style: none;
     padding: 0;

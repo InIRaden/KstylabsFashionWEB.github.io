@@ -1,136 +1,167 @@
 document.addEventListener("DOMContentLoaded", function () {
-<<<<<<< HEAD
-  // ================== CAROUSEL UNTUK "RECOMMENDED" ==================
-  let currentIndex = 0; // Menyimpan index gambar yang sedang ditampilkan
-  const carousel = document.querySelector(".carousel"); // Mengambil elemen carousel
-  const items = document.querySelectorAll(".carousel .item"); // Mengambil semua item di dalam carousel
-  const totalItems = items.length; // Menghitung total item di dalam carousel
-  const itemWidth = items[0].offsetWidth + 15; // Lebar satu item + margin
-=======
-    // ================== CAROUSEL UNTUK "RECOMMENDED" ==================
-    let currentIndex = 0; // Menyimpan index gambar yang sedang ditampilkan
-    const carousel = document.querySelector(".recommended"); // Mengambil elemen carousel
-    const items = document.querySelectorAll(".recommended .card"); // Mengambil semua item di dalam carousel
-    const totalItems = items.length; // Menghitung total item di dalam carousel
-    const itemWidth = items[0].offsetWidth + 15; // Lebar satu item + margin
->>>>>>> 3afe7c0e12b20c30717fd54c4221489e9161f347
+  // Category switching
+  const categoryButtons = document.querySelectorAll(".category-btn");
+  const items = document.querySelectorAll(".image-list img");
 
-  // Fungsi untuk memperbarui tampilan carousel
-  function updateCarousel() {
-    carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+  categoryButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Update active button
+      categoryButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      // Filter items
+      const category = button.dataset.category;
+      items.forEach((item) => {
+        if (category === "all" || item.dataset.type === category) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+
+  // Drag and Drop functionality
+  const draggableItems = document.querySelectorAll('[draggable="true"]');
+  const dropZones = document.querySelectorAll(".drop-zone");
+  const removeButtons = document.querySelectorAll(".remove-btn");
+
+  draggableItems.forEach((item) => {
+    item.addEventListener("dragstart", handleDragStart);
+    item.addEventListener("dragend", handleDragEnd);
+  });
+
+  dropZones.forEach((zone) => {
+    zone.addEventListener("dragover", handleDragOver);
+    zone.addEventListener("dragleave", handleDragLeave);
+    zone.addEventListener("drop", handleDrop);
+  });
+
+  removeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const dropZone = button.closest(".drop-zone");
+      dropZone.innerHTML = `
+                <p>Drop ${button.dataset.target} Here</p>
+                <button class="remove-btn" data-target="${button.dataset.target}">Remove</button>
+            `;
+    });
+  });
+
+  // Carousel functionality
+  const carousels = document.querySelectorAll('.carousel');
+  
+  carousels.forEach(carousel => {
+    const cardsContainer = carousel.querySelector('.cards-container');
+    const prevBtn = carousel.querySelector('#prev');
+    const nextBtn = carousel.querySelector('#next');
+    const card = carousel.querySelector('.card');
+    
+    // Calculate card width including margin/gap
+    const cardWidth = card.offsetWidth + 16; // 16px is the gap between cards
+    
+    // Next button click handler
+    nextBtn.addEventListener('click', () => {
+      cardsContainer.scrollBy({
+        left: cardWidth,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Previous button click handler
+    prevBtn.addEventListener('click', () => {
+      cardsContainer.scrollBy({
+        left: -cardWidth,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Show/hide buttons based on scroll position
+    cardsContainer.addEventListener('scroll', () => {
+      prevBtn.style.opacity = cardsContainer.scrollLeft <= 0 ? '0.5' : '1';
+      nextBtn.style.opacity = 
+        cardsContainer.scrollLeft >= cardsContainer.scrollWidth - cardsContainer.clientWidth - 10 
+          ? '0.5' 
+          : '1';
+    });
+  });
+
+  // Mouse wheel scroll
+  cardsContainer.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    cardsContainer.scrollBy({
+      left: e.deltaY > 0 ? cardWidth : -cardWidth,
+      behavior: 'smooth'
+    });
+  });
+
+  // Show/hide navigation buttons based on scroll position
+  cardsContainer.addEventListener('scroll', () => {
+    prev.style.display = cardsContainer.scrollLeft <= 0 ? 'none' : 'block';
+    next.style.display = 
+      cardsContainer.scrollLeft >= cardsContainer.scrollWidth - cardsContainer.clientWidth 
+        ? 'none' 
+        : 'block';
+  });
+
+  // Initial button visibility check
+  prev.style.display = 'none';
+
+    // Button navigation
+    const prevBtn = carousel.querySelector("button:first-child");
+    const nextBtn = carousel.querySelector("button:last-child");
+    const scrollAmount = 300;
+
+    prevBtn.addEventListener("click", () => {
+      carousel.scrollLeft -= scrollAmount;
+    });
+
+    nextBtn.addEventListener("click", () => {
+      carousel.scrollLeft += scrollAmount;
+    });
+  });
+
+  function handleDragStart(e) {
+    e.dataTransfer.setData("text/plain", e.target.src);
+    e.dataTransfer.setData("type", e.target.dataset.type);
+    e.target.classList.add("dragging");
   }
 
-  // Fungsi untuk berpindah ke slide berikutnya
-  window.nextSlide = function () {
-    if (currentIndex < totalItems - 1) {
-      currentIndex++; // Pindah ke item berikutnya
-    } else {
-      currentIndex = 0; // Kembali ke awal jika sudah di akhir
-    }
-    updateCarousel();
-  };
-
-  // Fungsi untuk berpindah ke slide sebelumnya
-  window.prevSlide = function () {
-    if (currentIndex > 0) {
-      currentIndex--; // Pindah ke item sebelumnya
-    } else {
-      currentIndex = totalItems - 1; // Kembali ke item terakhir jika di awal
-    }
-    updateCarousel();
-  };
-
-  // ================== CAROUSEL UNTUK "NEW ARRIVAL" ==================
-  let currentArrivalIndex = 0;
-  const arrivalCarousel = document.querySelector(".arrival-carousel");
-  const arrivalItems = document.querySelectorAll(
-    ".arrival-carousel .item-arrival"
-  );
-  const totalArrivalItems = arrivalItems.length;
-  const arrivalItemWidth = arrivalItems[0].offsetWidth + 15;
-
-  function updateArrivalCarousel() {
-    arrivalCarousel.style.transform = `translateX(-${
-      currentArrivalIndex * arrivalItemWidth
-    }px)`;
+  function handleDragEnd(e) {
+    e.target.classList.remove("dragging");
+    dropZones.forEach((zone) => zone.classList.remove("drag-over"));
   }
 
-  // Fungsi untuk berpindah ke slide berikutnya di carousel "New Arrival"
-  window.nextArrivalSlide = function () {
-    if (currentArrivalIndex < totalArrivalItems - 1) {
-      currentArrivalIndex++;
-    } else {
-      currentArrivalIndex = 0;
+  function handleDragOver(e) {
+    e.preventDefault();
+    this.classList.add("drag-over");
+  }
+
+  function handleDragLeave(e) {
+    this.classList.remove("drag-over");
+  }
+
+  function handleDrop(e) {
+    e.preventDefault();
+    this.classList.remove("drag-over");
+
+    const itemType = e.dataTransfer.getData("type");
+    const zoneType = this.dataset.type;
+
+    if (itemType === zoneType || zoneType === "all") {
+      const imgSrc = e.dataTransfer.getData("text/plain");
+      this.innerHTML = `
+                <img src="${imgSrc}" alt="Dropped item">
+                <button class="remove-btn" data-target="${zoneType}">Remove</button>
+            `;
+
+      // Reattach event listener to new remove button
+      const newRemoveBtn = this.querySelector(".remove-btn");
+      newRemoveBtn.addEventListener("click", () => {
+        this.innerHTML = `
+                    <p>Drop ${zoneType} Here</p>
+                    <button class="remove-btn" data-target="${zoneType}">Remove</button>
+                `;
+      });
     }
-    updateArrivalCarousel();
-  };
-
-  // Fungsi untuk berpindah ke slide sebelumnya di carousel "New Arrival"
-  window.prevArrivalSlide = function () {
-    if (currentArrivalIndex > 0) {
-      currentArrivalIndex--;
-    } else {
-      currentArrivalIndex = totalArrivalItems - 1;
-    }
-    updateArrivalCarousel();
-  };
-
-  // ================== PREVIEW GAMBAR DARI SIDEBAR ==================
-  const previewArea = document.querySelector(".preview"); // Area untuk menampilkan gambar besar
-  const sidebarImages = document.querySelectorAll(".image-list img"); // Mengambil semua gambar di sidebar
-
-  sidebarImages.forEach((img) => {
-    img.addEventListener("click", function () {
-      // Saat gambar diklik, tampilkan di previewArea
-      previewArea.innerHTML = `<img src="${img.src}" alt="Preview" style="width:100%; border-radius:10px;">`;
-    });
-  });
-
-  // ================== SISTEM FAVORITE (LIKE) ==================
-  const favoriteIcons = document.querySelectorAll(".favorite"); // Mengambil semua ikon favorite
-
-  favoriteIcons.forEach((icon) => {
-    icon.addEventListener("click", function () {
-      // Jika warna ikon sudah merah, ubah menjadi hitam, dan sebaliknya
-      if (this.style.color === "red") {
-        this.style.color = "black";
-      } else {
-        this.style.color = "red";
-      }
-    });
-  });
-
-  // ================== EFEK ANIMASI PADA SEARCH BAR ==================
-  const searchInput = document.querySelector(".search-bar input"); // Mengambil input search bar
-  const searchBar = document.querySelector(".search-bar"); // Mengambil container search bar
-
-  searchInput.addEventListener("focus", function () {
-    searchBar.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.2)"; // Tambahkan bayangan saat input fokus
-  });
-
-  searchInput.addEventListener("blur", function () {
-    searchBar.style.boxShadow = "none"; // Hilangkan bayangan saat input tidak aktif
-  });
-});
-
-//function carousel landing page
-document.addEventListener("DOMContentLoaded", function () {
-  const prev = document.querySelector("#prev");
-  const next = document.querySelector("#next");
-  const cardsContainer = document.querySelector(".cards-container");
-
-  let scrollAmount = 0;
-  let cardWidth = cardsContainer.querySelector(".card").offsetWidth + 16;
-  next.addEventListener("click", () => {
-    cardsContainer.scrollBy({
-      left: cardWidth,
-      behavior: "smooth",
-    });
-  });
-  prev.addEventListener("click", () => {
-    cardsContainer.scrollBy({
-      left: -cardWidth,
-      behavior: "smooth",
-    });
-  });
+  }
 });

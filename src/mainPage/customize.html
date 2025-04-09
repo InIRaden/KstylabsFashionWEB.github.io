@@ -43,80 +43,113 @@
 
     <main>
       <aside>
-        <h3>Korean Clothes</h3>
+        <div class="categories">
+          <button class="category-btn active" data-category="all">All</button>
+          <button class="category-btn" data-category="tops">Tops</button>
+          <button class="category-btn" data-category="bottoms">Bottoms</button>
+          <button class="category-btn" data-category="dresses">Dresses</button>
+          <button class="category-btn" data-category="accessories">Accessories</button>
+        </div>
         <div class="image-list">
-          <img src="../public/img/images (3).jpeg" alt="Outfit 1" />
-          <img src="../public/img/images (1).jpeg" alt="Outfit 2" />
-          <img src="../public/img/images (10).jpeg" alt="Outfit 3" />
-          <img src="../public/img/images (7).jpeg " alt="Outfit 4" />
-          <img src="../public/img/images (8).jpeg " alt="Outfit 5" />
-          <img src="../public/img/images (12).jpeg " alt="Outfit 6" />
-          <img src="../public/img/images (9).jpeg " alt="Outfit 7" />
-          <img src="../public/img/images (3).jpeg " alt="Outfit 8" />
+          <img src="../public/img/images (3).jpeg" alt="Outfit 1" draggable="true" data-type="tops"/>
+          <img src="../public/img/images (1).jpeg" alt="Outfit 2" draggable="true" data-type="bottoms"/>
+          <img src="../public/img/images (10).jpeg" alt="Outfit 3" draggable="true" data-type="dresses"/>
+          <img src="../public/img/images (7).jpeg" alt="Outfit 4" draggable="true" data-type="tops"/>
+          <img src="../public/img/images (8).jpeg" alt="Outfit 5" draggable="true" data-type="bottoms"/>
+          <img src="../public/img/images (12).jpeg" alt="Outfit 6" draggable="true" data-type="accessories"/>
+          <img src="../public/img/images (9).jpeg" alt="Outfit 7" draggable="true" data-type="dresses"/>
+          <img src="../public/img/images (3).jpeg" alt="Outfit 8" draggable="true" data-type="tops"/>
         </div>
       </aside>
 
       <section class="preview">
-        <p>Select an item to see details</p>
+        <div class="drop-zones">
+          <div class="drop-zone" data-type="tops">
+            <p>Drop Tops Here</p>
+            <button class="remove-btn" data-target="tops">Remove</button>
+          </div>
+          <div class="drop-zone" data-type="bottoms">
+            <p>Drop Bottoms Here</p>
+            <button class="remove-btn" data-target="bottoms">Remove</button>
+          </div>
+          <div class="drop-zone" data-type="dresses">
+            <p>Drop Dresses Here</p>
+            <button class="remove-btn" data-target="dresses">Remove</button>
+          </div>
+          <div class="drop-zone" data-type="accessories">
+            <p>Drop Accessories Here</p>
+            <button class="remove-btn" data-target="accessories">Remove</button>
+          </div>
+        </div>
       </section>
     </main>
 
     <!-- RECOMMENDED -->
 
-    <h2 style="display: flex; justify-content: center; margin-top: 9rem ; font-size: 2.5rem;">Recommended</h2>
+    <h2 style="display: flex; justify-content: center; margin-top: 9rem ; font-size: 2.5rem;">What's Hot This Week!</h2>
 
-    <div class="recommended">
-      <button id="prev"><i class="fas fa-chevron-left"></i></button>
-      <div class="cards-recommended">
-        <div class="card">
-          <img src="../public/img/images (7).jpeg" alt="Product">
-          <div class="card-content">
-            <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
-            <i class="far fa-heart favorite"></i>
-          </div>
-        </div>
-        <div class="card">
-          <img src="../public/img/images (10).jpeg" alt="Product">
-          <div class="card-content">
+        <div class="carousel">
+            <button id="prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="../public/img/images (7).jpeg" alt="Product">
+                    <div class="card-content">
+                        <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
+                        <p>US$30.52</p>
+                        <i class="far fa-heart favorite"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../public/img/images (10).jpeg" alt="Product">
+                    <div class="card-content">
 
-            <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
-            <i class="far fa-heart favorite"></i>
-          </div>
-        </div>
-        <div class="card">
-          <img src="../public/img/images (2).jpeg" alt="Product">
-          <div class="card-content">
+                        <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
+                        <p>US$30.52</p>
+                        <i class="far fa-heart favorite"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../public/img/images (2).jpeg" alt="Product">
+                    <div class="card-content">
 
-            <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
-            <i class="far fa-heart favorite"></i>
-          </div>
-        </div>
-        <div class="card">
-          <img src="../public/img/images (7).jpeg" alt="Product">
-          <div class="card-content">
+                        <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
+                        <p>US$30.52</p>
+                        <i class="far fa-heart favorite"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../public/img/images (7).jpeg" alt="Product">
+                    <div class="card-content">
 
-            <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
-            <i class="far fa-heart favorite"></i>
-          </div>
-        </div>
-        <div class="card">
-          <img src="../public/img/images (8).jpeg" alt="Product">
-          <div class="card-content">
+                        <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
+                        <p>US$30.52</p>
+                        <i class="far fa-heart favorite"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../public/img/images (8).jpeg" alt="Product">
+                    <div class="card-content">
 
-            <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
-            <i class="far fa-heart favorite"></i>
-          </div>
+                        <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
+                        <p>US$30.52</p>
+                        <i class="far fa-heart favorite"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../public/img/images (5).jpeg" alt="Product">
+                    <div class="card-content">
+                        <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
+                        <p>US$30.52</p>
+                        <i class="far fa-heart favorite"></i>
+                    </div>
+                </div>
+            </div>
+            <button id="next"><i class="fas fa-chevron-right"></i></button>
         </div>
-        <div class="card">
-          <img src="../public/img/images (5).jpeg" alt="Product">
-          <div class="card-content">
-            <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
-            <i class="far fa-heart favorite"></i>
-          </div>
-        </div>
-      </div>
-      <button id="next"><i class="fas fa-chevron-right"></i></button>
+        
+       
     </div>
+
 
     <!-- Find your favorite KPOP IDOL outfit -->
 
@@ -247,7 +280,10 @@
       </div>
     </section>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="../public/js/customize.js"></script>
+  
+
 </body>
 
 </html>
