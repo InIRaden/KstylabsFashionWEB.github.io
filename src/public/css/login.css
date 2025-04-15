@@ -238,3 +238,20 @@ input:focus {
     margin-bottom: 20px;
   }
 }
+
+.error {
+    border-color: #ff3333 !important;
+    background-color: #fff2f2;
+}
+
+.error-message {
+    color: #ff3333;
+    font-size: 14px;
+    margin: 8px 0;
+    text-align: left;
+}
+
+.form-group input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
