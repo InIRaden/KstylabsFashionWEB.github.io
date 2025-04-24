@@ -418,9 +418,9 @@ nav a:hover {
 }
 .card img {
     width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 20px;
+    height: 250px;
+    object-fit: cover;
+    border-radius:15px ;
 }
 .card-content {
     position: relative;
@@ -469,123 +469,122 @@ nav a:hover {
     align-items: center;
     text-align: center;
     margin: 9rem auto 0 auto;
+    padding: 0 4rem;
+    max-width: 1400px;
 }
 
 .header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 5px;
 }
 
 .header p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #634AFF;
-    margin-bottom: 40px;
-    text-align: center;
+    margin-bottom: 30px;
 }
 
-.item-large {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-    align-items: center;
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     width: 100%;
-}
-
-.item-left {
-    flex: 2;
-    position: relative;
-    overflow: hidden;
-}
-
-.item-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-   
 }
 
 .item {
     position: relative;
     background: white;
-  
+    height: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.item::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
-    opacity: 0; 
-    border-radius:20px ;
-    transition: opacity 0.5s ease-in-out; 
-    z-index: 5; 
-    pointer-events: none; 
-}
-
-.item:hover::after {
-    opacity: 1; 
+.item:hover {
+    transform: translateY(-5px);
 }
 
 .item img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+}
+
+.item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    opacity: 0;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 2rem;
     border-radius: 20px;
 }
 
+.item:hover .item-overlay {
+    opacity: 1;
+}
+
+.item:hover img {
+    transform: scale(1.05);
+}
+
 .btn {
-    position: absolute;
-    top: 90%; /* Posisikan di tengah gambar */
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: white;
+    color: black;
     border: none;
-    padding: 8px 12px;
-    border-radius: 20px;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
     cursor: pointer;
-    font-size: 14px;
-    z-index: 10; 
-    width: 8rem;
-    height: 3rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.btn:hover {
+    background: black;
+    color: white;
+    transform: translateY(-2px);
 }
 
 .all-products {
     margin-top: 2rem;
+    text-align: center;
 }
 
 .all-products button {
     background: black;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
     cursor: pointer;
-    width: 9rem;
-    height: 3rem;
+    width: 7rem;
+    height: 2.5rem;
+    transition: all 0.3s ease;
 }
 
-.btn-large-image {
-    position: absolute;
-    top: 90%; /* Menengahkan tombol dalam frame gambar besar */
-    left: 50%;
-    transform: translate(-50%, -50%);
+.all-products button:hover {
     background: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 14px;
-    z-index: 10;
-    height: 3rem;
-    width: 8rem;
+    color: black;
+    border: 1px solid black;
+    transform: translateY(-2px);
 }
 
-  /* benfit section  */
+
+
   /* Modern styling */
   .benefits-section {
       background: #000;
@@ -637,22 +636,11 @@ nav a:hover {
       align-items: center;
       justify-content: center;
       margin-bottom: 1.5rem;
-      border: 2px solid #634AFF;
-      position: relative;
-  }
-  
-  .icon::after {
-      content: '';
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      border: 1px solid rgba(99, 74, 255, 0.3);
-      border-radius: 50%;
   }
   
   .icon i {
       font-size: 1.5rem;
-      color: #634AFF;
+      color: #000;
   }
   
   .benefit-card h3 {
