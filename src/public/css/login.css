@@ -66,7 +66,49 @@ body {
 
 .brand i {
   font-style: italic;
-  font-weight: 300;
+  font-weight: 900; /* Changed from 300 to 900 for bold */
+}
+
+/* Right Panel text size adjustments */
+h1 {
+  font-size: 24px; /* Reduced from 28px */
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 13px; /* Added font size */
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+  font-size: 13px; /* Reduced size */
+}
+
+input {
+  width: 100%;
+  padding: 10px 15px; /* Reduced padding */
+  border: 1px solid #dddddd67;
+  border-radius: 20px;
+  font-size: 13px; /* Reduced from 14px */
+  transition: border-color 0.3s;
+}
+
+.sign-in-btn {
+  width: 100%;
+  padding: 10px; /* Reduced from 12px */
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px; /* Reduced from 16px */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 8px;
 }
 
 .menu {
