@@ -1,1 +1,76 @@
-buatkan halaman favooritnya nya bserta daftar apa aja yg udah di favoritin nanti masuk ke halaman inn, bisa juga di unfavorit nanntinya 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-StyLabs - My Favorites</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="favorite.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo">K-<span>StyLabs</span></div>
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search your own style" />
+                </div>
+                <div class="icons">
+                    <i class="fa-regular fa-user" onclick="window.location.href='#home'"></i>
+                    <i class="fa-regular fa-heart active"></i>
+                </div>
+            </div>
+        </header>
+
+        <nav>
+            <a href="landingPage.html">Korean Clothes</a>
+            <a href="#">Accessories</a>
+            <a href="../blog/blog.html">Fashion Tips</a>
+            <a href="customize.html">Customize</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <div class="favorites-header">
+                <h1>My Favorites</h1>
+                <p>Items you've loved will appear here</p>
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState">
+                <div class="empty-content">
+                    <i class="far fa-heart"></i>
+                    <h2>Your favorites list is empty</h2>
+                    <p>Start adding items you love to your favorites list</p>
+                    <button onclick="window.location.href='landingPage.html'">Explore Products</button>
+                </div>
+            </div>
+
+            <!-- Favorites Grid -->
+            <div class="favorites-grid" id="favoritesGrid">
+                <!-- Favorites will be dynamically added here -->
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <section class="footer">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <div class="logo">K-StyLabs</div>
+                    <p>Let's Create A Custom Photo Session Just For You.</p>
+                    <ul>
+                        <li><a href="#">Data Privacy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Product</a></li>
+                    </ul>
+                </div>
+                <!-- Rest of your footer content -->
+            </div>
+        </section>
+    </div>
+
+    <script src="favorite.js"></script>
+</body>
+</html>
