@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K-StyLabs</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- SwiperJS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../public/css/admin.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">K-<span>StyLabs</span></div>
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search your own style" />
+                </div>
+                <div class="icons">
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <nav>
+            <a href="../mainPage/landingPage.html">Korean Clothes</a>
+            <a href="#">Accessories</a>
+            <a href="../blog/blog.html">Fashion Tips</a>
+            <a href="../mainPage/customize.html">Customize</a>
+        </nav>
+
+        <!-- Halaman Admin -->
+
+        <!-- Tombol Tambah -->
+        <button class="btn tambah" onclick="openModal()">+ Tambah Data</button>
+
+        <!-- Modal Form Tambah Data -->
+        <div id="modalForm" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Tambah Style</h2>
+                <form id="formTambah">
+                    <input type="text" id="model" placeholder="Nama Model" required />
+                    <input type="text" id="negara" placeholder="Dari Negara" required />
+                    <input type="text" id="style" placeholder="Jenis Style" required />
+                    <input type="text" id="cuaca" placeholder="Cuaca" required />
+                    <button type="submit" class="btn tambah">Simpan</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <main class="content">
+                <h1>Daftar Style</h1>
+                <table id="studentTable">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Model</th>
+                            <th>Dari Negara</th>
+                            <th>Jenis Style</th>
+                            <th>Cuaca</th>
+                            <th>Tindakan</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+            </main>
+        </div>
+
+        <!-- section footer -->
+        <section class="footer">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <div class="logo">K-StyLabs</div>
+                    <p>Let's Create A Custom Photo Session Just For You.</p>
+                    <ul>
+                        <li><a href="#">Data Privacy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Product</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-middle">
+                    <div class="address">
+                        <h4>Address</h4>
+                        <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
+                    </div>
+                    <div class="address">
+                        <h4>Address</h4>
+                        <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
+                    </div>
+                </div>
+
+                <div class="footer-right">
+                    <div class="contact">
+                        <h4>Phone</h4>
+                        <p>(704) 555-0127</p>
+                    </div>
+                    <div class="contact">
+                        <h4>Email</h4>
+                        <p>georgia.young@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p> Cherish Your Special Day With Stunning, Candid Shots That Capture The Love And Joy. </p>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="../public/js/admin.js"></script>
+
+</body>
+
+</html>
