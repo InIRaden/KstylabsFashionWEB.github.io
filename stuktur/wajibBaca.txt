@@ -1,0 +1,46 @@
+KstylabsFashionWEB.github.io/
+├── backend/
+│   ├── config/
+│   │   ├── Database.php
+│   │   └── Constants.php
+│   │
+│   ├── controllers/
+│   │   ├── AdminController.php
+│   │   ├── AuthController.php
+│   │   ├── BlogController.php
+│   │   ├── StyleController.php
+│   │   └── FavoriteController.php
+│   │
+│   ├── models/
+│   │   ├── User.php
+│   │   ├── Style.php
+│   │   ├── Blog.php
+│   │   └── Favorite.php
+│   │
+│   ├── api/
+│   │   ├── admin/
+│   │   │   ├── create.php
+│   │   │   ├── read.php
+│   │   │   ├── update.php
+│   │   │   └── delete.php
+│   │   │
+│   │   ├── auth/
+│   │   │   ├── login.php
+│   │   │   └── register.php
+│   │   │
+│   │   ├── blog/
+│   │   │   ├── create.php
+│   │   │   ├── read.php
+│   │   │   └── comment.php
+│   │   │
+│   │   └── favorites/
+│   │       ├── add.php
+│   │       ├── remove.php
+│   │       └── list.php
+│   │
+│   └── uploads/
+│       ├── blog/
+│       └── styles/
+│
+└── database/
+    └── k_stylabs.sql
