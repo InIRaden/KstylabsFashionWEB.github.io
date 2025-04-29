@@ -1,76 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-StyLabs - My Favorites</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="favorite.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorites - K-StyLabs</title>
+    <link rel="stylesheet" href="../public/css/customize.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
-        <!-- Header Section -->
-        <header>
-            <div class="logo">K-<span>StyLabs</span></div>
-            <div class="search-container">
-                <div class="search-bar">
-                    <input type="text" placeholder="Search your own style" />
-                </div>
-                <div class="icons">
-                    <i class="fa-regular fa-user" onclick="window.location.href='#home'"></i>
-                    <i class="fa-regular fa-heart active"></i>
-                </div>
-            </div>
-        </header>
+      <!-- Copy header and nav from customize.html -->
 
-        <nav>
-            <a href="landingPage.html">Korean Clothes</a>
-            <a href="#">Accessories</a>
-            <a href="../blog/blog.html">Fashion Tips</a>
-            <a href="customize.html">Customize</a>
-        </nav>
+      <h1 style="text-align: center; margin: 2rem 0">My Favorites</h1>
 
-        <!-- Main Content -->
-        <main>
-            <div class="favorites-header">
-                <h1>My Favorites</h1>
-                <p>Items you've loved will appear here</p>
-            </div>
+      <div
+        id="emptyState"
+        style="
+          display: none;
+          justify-content: center;
+          align-items: center;
+          min-height: 300px;
+        "
+      >
+        <p>No favorites yet. Start adding some items!</p>
+      </div>
 
-            <!-- Empty State -->
-            <div class="empty-state" id="emptyState">
-                <div class="empty-content">
-                    <i class="far fa-heart"></i>
-                    <h2>Your favorites list is empty</h2>
-                    <p>Start adding items you love to your favorites list</p>
-                    <button onclick="window.location.href='landingPage.html'">Explore Products</button>
-                </div>
-            </div>
-
-            <!-- Favorites Grid -->
-            <div class="favorites-grid" id="favoritesGrid">
-                <!-- Favorites will be dynamically added here -->
-            </div>
-        </main>
-
-        <!-- Footer -->
-        <section class="footer">
-            <div class="footer-container">
-                <div class="footer-left">
-                    <div class="logo">K-StyLabs</div>
-                    <p>Let's Create A Custom Photo Session Just For You.</p>
-                    <ul>
-                        <li><a href="#">Data Privacy</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Impressum</a></li>
-                        <li><a href="#">Product</a></li>
-                    </ul>
-                </div>
-                <!-- Rest of your footer content -->
-            </div>
-        </section>
+      <div class="favorites-grid" id="favoritesGrid">
+        <!-- Favorites will be loaded here dynamically -->
+      </div>
     </div>
 
-    <script src="favorite.js"></script>
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const favoritesGrid = document.getElementById("favoritesGrid");
+        const emptyState = document.getElementById("emptyState");
+        const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+        if (favorites.length === 0) {
+          emptyState.style.display = "flex";
+          favoritesGrid.style.display = "none";
+        } else {
+          emptyState.style.display = "none";
+          favoritesGrid.style.display = "grid";
+
+          favoritesGrid.innerHTML = favorites
+            .map(
+              (item) => `
+                    <div class="card">
+                        <img src="${item.image}" alt="${item.title}">
+                        <div class="card-content">
+                            <h2>${item.title}</h2>
+                            <p>${item.price}</p>
+                            <i class="fas fa-heart favorite"></i>
+                        </div>
+                    </div>
+                `
+            )
+            .join("");
+        }
+      });
+    </script>
+    <script src="../public/js/favorite.js"></script>
+  </body>
 </html>

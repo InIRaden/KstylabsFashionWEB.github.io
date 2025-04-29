@@ -27,14 +27,13 @@
         </div> -->
         <div class="icons">
           <i class="fa-regular fa-user" onclick="window.location.href='#home'"></i>
-          <i class="fa-regular fa-heart"></i>
+          <i class="fa-regular fa-heart" onclick="window.location.href='../mainPage/Favorite.html'"></i>
         </div>
       </div>
     </header>
 
     <nav>
       <a href="../mainPage/landingPage.html">Korean Clothes</a>
-      <a href="#">Accessories</a>
       <a href="../blog/blog.html">Fashion Tips</a>
       <a href="../mainPage/customize.html">Customize</a>
     </nav>
@@ -46,18 +45,18 @@
         <div class="categories">
           <button class="category-btn active" data-category="all">All</button>
           <button class="category-btn" data-category="tops">Tops</button>
-          <button class="category-btn" data-category="bottoms">Bottoms</button>
-          <button class="category-btn" data-category="dresses">Dresses</button>
-          <button class="category-btn" data-category="accessories">Accessories</button>
+          <button class="category-btn" data-category="shirt">Shirt</button>
+          <button class="category-btn" data-category="pants">Pants</button>
+          <button class="category-btn" data-category="shoes">Shoes</button>
         </div>
         <div class="image-list">  
           <img src="../public/img/images (3).jpeg" alt="Outfit 1" draggable="true" data-type="tops"/>
-          <img src="../public/img/images (1).jpeg" alt="Outfit 2" draggable="true" data-type="bottoms"/>
-          <img src="../public/img/images (10).jpeg" alt="Outfit 3" draggable="true" data-type="dresses"/>
+          <img src="../public/img/images (1).jpeg" alt="Outfit 2" draggable="true" data-type="Shirt"/>
+          <img src="../public/img/images (10).jpeg" alt="Outfit 3" draggable="true" data-type="pants"/>
           <img src="../public/img/images (7).jpeg" alt="Outfit 4" draggable="true" data-type="tops"/>
-          <img src="../public/img/images (8).jpeg" alt="Outfit 5" draggable="true" data-type="bottoms"/>
-          <img src="../public/img/images (12).jpeg" alt="Outfit 6" draggable="true" data-type="accessories"/>
-          <img src="../public/img/images (9).jpeg" alt="Outfit 7" draggable="true" data-type="dresses"/>
+          <img src="../public/img/images (8).jpeg" alt="Outfit 5" draggable="true" data-type="shoes"/>
+          <img src="../public/img/images (12).jpeg" alt="Outfit 6" draggable="true" data-type="shoes"/>
+          <img src="../public/img/images (9).jpeg" alt="Outfit 7" draggable="true" data-type="shirt"/>
           <img src="../public/img/images (3).jpeg" alt="Outfit 8" draggable="true" data-type="tops"/>
         </div>
       </aside>
@@ -68,17 +67,17 @@
             <p>Drop Tops Here</p>
             <button class="remove-btn" data-target="tops">Remove</button>
           </div>
-          <div class="drop-zone" data-type="bottoms">
-            <p>Drop Bottoms Here</p>
-            <button class="remove-btn" data-target="bottoms">Remove</button>
+          <div class="drop-zone" data-type="shirt">
+            <p>Drop shirt Here</p>
+            <button class="remove-btn" data-target="shirt">Remove</button>
           </div>
-          <div class="drop-zone" data-type="dresses">
-            <p>Drop Dresses Here</p>
-            <button class="remove-btn" data-target="dresses">Remove</button>
+          <div class="drop-zone" data-type="pants">
+            <p>Drop pants Here</p>
+            <button class="remove-btn" data-target="pants">Remove</button>
           </div>
-          <div class="drop-zone" data-type="accessories">
-            <p>Drop Accessories Here</p>
-            <button class="remove-btn" data-target="accessories">Remove</button>
+          <div class="drop-zone" data-type="Shoes">
+            <p>Drop Shoes Here</p>
+            <button class="remove-btn" data-target="Shoes">Remove</button>
           </div>
         </div>
       </section>
@@ -172,66 +171,7 @@
     </section>
 
     <!-- What’s Hot This Week! -->
-    <!-- carousel -->
-    <h2 style="display: flex; justify-content: center; margin-top: 9rem ; font-size: 2.5rem;">What's Hot This Week!</h2>
-
-    <div class="carousel">
-      <button id="prev"><i class="fas fa-chevron-left"></i></button>
-      <div class="cards-container">
-        <div class="card">
-          <img src="../public/img/images (7).jpeg" alt="Product">
-          <div class="card-content">
-            <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
-            <p>US$30.52</p>
-            <i class="far fa-heart favorite"></i>
-          </div>
-        </div>
-        <div class="card">
-          <img src="../public/img/images (10).jpeg" alt="Product">
-          <div class="card-content">
-            <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
-            <p>US$30.52</p>
-            <i class="far fa-heart favorite"></i>
-          </div>
-        </div>
-        <div class="card">
-          <img src="../public/img/images (2).jpeg" alt="Product">
-          <div class="card-content">
-
-            <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
-            <p>US$30.52</p>
-            <i class="far fa-heart favorite"></i>
-          </div>
-        </div>
-        <div class="card">
-          <img src="../public/img/images (7).jpeg" alt="Product">
-          <div class="card-content">
-
-            <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
-            <p>US$30.52</p>
-            <i class="far fa-heart favorite"></i>
-          </div>
-        </div>
-        <div class="card">
-          <img src="../public/img/images (8).jpeg" alt="Product">
-          <div class="card-content">
-
-            <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
-            <p>US$30.52</p>
-            <i class="far fa-heart favorite"></i>
-          </div>
-        </div>
-        <div class="card">
-          <img src="../public/img/images (5).jpeg" alt="Product">
-          <div class="card-content">
-            <h2>Mint Ruched Hoodie Long Sleeve Tee</h2>
-            <p>US$30.52</p>
-            <i class="far fa-heart favorite"></i>
-          </div>
-        </div>
-      </div>
-      <button id="next"><i class="fas fa-chevron-right"></i></button>
-    </div>
+   
 
     <!-- section footer -->
     <section class="footer">
@@ -282,8 +222,7 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="../public/js/customize.js"></script>
-  
-
-</body>
-
+  <!-- At the bottom of the body tag, before closing -->
+  <script src="../public/js/favorites.js"></script>
+  </body>
 </html>
