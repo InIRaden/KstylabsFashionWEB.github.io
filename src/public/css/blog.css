@@ -14,15 +14,88 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-}f
+}
 
 /* Header Styles */
 header {
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
-  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem 2rem;
+  border-bottom: 1px solid white;
+  background-color: white;
 }
 
+.logo {
+  font-size: 2.25rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.logo span {
+  font-style: normal;
+  font-size: 2.25rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+  z-index: 5;
+}
+
+.search-bar input {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(125, 125, 125);
+  border-radius: 9999px;
+  width: 500px;
+  background-color: #f3f4f698;
+  height: 34px;
+  outline: none;
+  margin-right: 10rem;
+  transition: border-color 0.5s ease-in-out;
+}
+
+.search-bar input:focus {
+  border-color: black;
+  border-width: 1.2px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 2rem;
+}
+
+.icons i {
+  font-size: 1.2rem;
+  color: black;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 0;
+  font-size: 1rem;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+/* Existing styles continue below */
 .header-content {
   display: flex;
   justify-content: space-between;
@@ -202,7 +275,7 @@ a {
   margin-bottom: 20px;
   line-height: 1.5;
 }
-.footer-container p { 
+.footer-container p {
   color: #ffffff60;
 }
 

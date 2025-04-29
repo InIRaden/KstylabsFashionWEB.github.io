@@ -6,6 +6,18 @@
     <link rel="stylesheet" href="../public/css/isiblog.css" />
     <link rel="script" href="../public/js/isiblog.js" />
     <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
@@ -16,78 +28,28 @@
   <body>
     <!-- Header Section -->
     <header>
-      <div class="container">
-        <div class="header-content">
-          <a href="/src/mainPage/landingPage.html" class="logo"
-            >k<span>- StyLabs</span></a
-          >
-
-          <div class="search-bar">
-            <input type="text" placeholder="Search our cool styles" />
-            <button type="submit">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-            </button>
-          </div>
-
-          <div class="user-actions">
-            <a href="/src/auth/login.html">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-            </a>
-            <a href="#">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                ></path>
-              </svg>
-            </a>
-          </div>
+      <div class="logo">
+        <a href="/src/mainPage/landingPage.html">K-<span>StyLabs</span></a>
+      </div>
+      <div class="search-container">
+        <div class="search-bar">
+          <input type="text" placeholder="Search your own style" />
+        </div>
+        <div class="icons">
+          <i
+            class="fa-regular fa-user"
+            onclick="window.location.href='../auth/login.html'"
+          ></i>
+          <i class="fa-regular fa-heart"></i>
         </div>
       </div>
     </header>
 
-    <!-- Navigation -->
     <nav>
-      <div class="container">
-        <ul class="nav-links">
-          <li><a href="/src/mainPage/landingPage.html">Korean Clothes</a></li>
-          <li><a href="#">Accessories</a></li>
-          <li><a href="/src/blog/blog.html">Fashion Tips</a></li>
-          <li><a href="/src/mainPage/customize.html">Customize</a></li>
-        </ul>
-      </div>
+      <a href="../mainPage/landingPage.html">Korean Clothes</a>
+      <a href="#">Accessories</a>
+      <a href="../blog/blog.html">Fashion Tips</a>
+      <a href="../mainPage/customize.html">Customize</a>
     </nav>
 
     <!-- Main Content -->
