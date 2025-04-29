@@ -248,6 +248,10 @@ aside {
   transition: all 0.3s;
 }
 
+.remove-btn:hover {
+  color: #ff4444;
+  opacity: 1 !important;
+}
 .drop-zone.drag-over {
   border-color: #000;
   background: rgba(0, 0, 0, 0.05);
@@ -418,6 +422,18 @@ aside {
   margin-top: 1rem;
   padding: 10px;
   position: relative;
+}
+/* Remove or comment out these styles */
+.carousel-indicators {
+  display: none;
+}
+
+.indicator {
+  display: none;
+}
+
+.indicator.active {
+  display: none;
 }
 .carousel-indicators {
   display: flex;
