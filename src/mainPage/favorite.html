@@ -4,32 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Favorites - K-StyLabs</title>
-    <link rel="stylesheet" href="../public/css/customize.css" />
+    <link rel="stylesheet" href="../public/css/favorite.css" />
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
   <body>
     <div class="container">
-      <!-- Copy header and nav from customize.html -->
+      <header>
+        <a href="/src/mainPage/landingPage.html"
+          ><div class="logo">K-<span>StyLabs</span></div></a
+        >
+        <div class="search-container">
+          <div class="search-bar">
+            <input type="text" placeholder="Search your own style" />
+          </div>
+          <!-- <div class="top_bar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+          </div> -->
+          <div class="icons">
+            <i
+              class="fa-regular fa-user"
+              onclick="window.location.href='#home'"
+            ></i>
+            <i
+              class="fa-regular fa-heart"
+              onclick="window.location.href='../mainPage/Favorite.html'"
+            ></i>
+          </div>
+        </div>
+      </header>
 
-      <h1 style="text-align: center; margin: 2rem 0">My Favorites</h1>
+      <nav>
+        <a href="../mainPage/landingPage.html">Korean Clothes</a>
+        <a href="../blog/blog.html">Fashion Tips</a>
+        <a href="../mainPage/customize.html">Customize</a>
+      </nav>
 
-      <div
-        id="emptyState"
-        style="
-          display: none;
-          justify-content: center;
-          align-items: center;
-          min-height: 300px;
-        "
-      >
-        <p>No favorites yet. Start adding some items!</p>
-      </div>
+      <div class="favorites-main">
+        <h2 class="favorites-title">My Favorites</h2>
 
-      <div class="favorites-grid" id="favoritesGrid">
-        <!-- Favorites will be loaded here dynamically -->
+        <div id="emptyState" class="empty-state">
+          <div class="empty-content">
+            <div class="heart-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <h2>Your favorites list is empty</h2>
+            <p>Start adding items you love!</p>
+          </div>
+        </div>
+
+        <div class="favorites-grid" id="favoritesGrid">
+          <!-- Favorites will be loaded here dynamically -->
+        </div>
       </div>
     </div>
 
@@ -44,7 +81,8 @@
           favoritesGrid.style.display = "none";
         } else {
           emptyState.style.display = "none";
-          favoritesGrid.style.display = "grid";
+          favoritesGrid.style.display = "grid"; // Changed from "flex" to "grid"
+          favoritesGrid.style.gridTemplateColumns = `repeat(auto-fill, minmax(220px, 1fr))`; // Added this line
 
           favoritesGrid.innerHTML = favorites
             .map(
@@ -54,15 +92,24 @@
                         <div class="card-content">
                             <h2>${item.title}</h2>
                             <p>${item.price}</p>
-                            <i class="fas fa-heart favorite"></i>
+                            <i class="fas fa-heart favorite active"></i>
                         </div>
                     </div>
                 `
             )
             .join("");
+
+          // Add click handlers to favorite buttons
+          const favoriteButtons = favoritesGrid.querySelectorAll(".favorite");
+          favoriteButtons.forEach((button, index) => {
+            button.addEventListener("click", () => {
+              favorites.splice(index, 1);
+              localStorage.setItem("favorites", JSON.stringify(favorites));
+              location.reload();
+            });
+          });
         }
       });
     </script>
-    <script src="../public/js/favorite.js"></script>
   </body>
 </html>
