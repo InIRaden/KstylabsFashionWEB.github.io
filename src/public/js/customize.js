@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Filter items
       const category = button.dataset.category;
+      console.log(category);
       items.forEach((item) => {
         if (category === "all" || item.dataset.type === category) {
           item.style.display = "block";

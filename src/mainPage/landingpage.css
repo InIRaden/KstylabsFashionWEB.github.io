@@ -436,7 +436,7 @@ p {
 .favorite {
   position: absolute;
   font-size: 22px;
-  color: gray;
+  color: rgb(255, 0, 0);
   cursor: pointer;
   float: right;
   margin-right: 10px;
@@ -446,7 +446,7 @@ p {
   right: -180px;
 }
 .favorite:hover {
-  color: black;
+  color: rgb(231, 63, 63);
 }
 
 /* alot image */
